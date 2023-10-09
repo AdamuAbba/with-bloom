@@ -1,0 +1,9 @@
+# Ignore artifacts:
+build
+coverage
+
+.git/
+.husky/
+.svn
+.hg
+node_modules/
