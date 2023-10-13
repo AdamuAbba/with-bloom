@@ -35,7 +35,7 @@ WithBloom is a startup that helps people discover new coins and their market rat
 - run test
 
   ```bash
-      npm run test
+      npm run test:jest
   ```
 
 - run build
