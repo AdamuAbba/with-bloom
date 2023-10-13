@@ -1,3 +1,6 @@
 node_modules/
 coverage/*
 ./src/react-app-env.d.ts
+./jest.config.ts
+./src/assets/animations/404.json
+./src/assets/animations/coinLoading.json

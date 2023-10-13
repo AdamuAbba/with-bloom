@@ -1,46 +1,122 @@
-# Getting Started with Create React App
+# With Bloom v1
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+WithBloom is a startup that helps people discover new coins and their market rates.
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+<!--toc:start-->
 
-### `npm start`
+- [With Bloom v1](#with-bloom-v1)
+- [Table of contents](#table-of-contents)
+  - [Installation](#installation)
+  - [Project structure](#project-structure)
+  - [User story](#user-story)
+  - [Author](#author)
+  - [🔗 Links](#🔗-links)
+  - [Features](#features)
+  - [Tech Stack](#tech-stack)
+  - [Appendix](#appendix)
+  <!--toc:end-->
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Installation
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- clone repo
 
-### `npm test`
+  ```bash
+      git clone https://github.com/AdamuAbba/with-bloom.git
+  ```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- install dependencies
 
-### `npm run build`
+  ```bash
+      npm install
+  ```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- run test
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+  ```bash
+      npm run test
+  ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- run build
 
-### `npm run eject`
+  ```bash
+     npm run build
+  ```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Project structure
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- Authentication Route
+  - Login Screen
+  - Signup Screen
+- Dashboard Route
+  - Coin List Screen
+  - Exchange rate calculator Screen
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+<img src="./demo/login.png"  width="130" height="270"> <img src="./demo/404_mobile.png"  width="130" height="270"> <img src="./demo/signup_mobile.png"  width="130" height="270"> <img src="./demo/dashboard_desktop.png"  width="130" height="270">
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## User story
 
-## Learn More
+- A user registers and signs in with [firebase Authentication](https://firebase.google.com/),
+  - A new users data is saved to [firebase Firestore](https://firebase.google.com/).
+- Access to the `Dashboard Route` is granted. -Here, a user proceeds to view available coins or use the exchange rate calculator
+- A user signs out with the `Exit` button on the top right corner of the **`Coin List Screen`**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Author
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- [Abba Adamu](https://github.com/AdamuAbba)
+
+## 🔗 Links
+
+<a href="https://www.facebook.com/izshytypes" target="_blank">
+<img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="facebook" />
+</a>
+<a href="https://www.instagram.com/shytypes1028/" target="_blank">
+<img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="instagram" />
+</a>
+<a href="https://twitter.com/shytypes1028">
+<img alt="twitter" src="https://img.shields.io/badge/twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white" alt="twitter" />
+</a>
+<a href="https://abbaportfolio.netlify.app/"  target="_blank">
+<img alt="portfolio" src="https://img.shields.io/badge/my_portfolio-000?style=for-the-badge&logo=ko-fi&logoColor=white" />
+</a>
+<a href="https://www.linkedin.com/in/abba-adamu-365a9b17a/">
+<img alt="linkedIn" src="https://img.shields.io/badge/linkedin-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+
+## Features
+
+- Basic design
+- Form state handling with [React Hook Form](https://react-hook-form.com)
+- Basic form validation with [zod validation](https://zod.dev/)
+- [firebase Authentication](https://firebase.google.com/)
+- [firebase Firestore to store user credentials](https://firebase.google.com/)
+- **API url is embeded within app using environment variables**
+- [Redux toolkit](https://redux-toolkit.js.org) state management
+
+## Tech Stack
+
+**Client:** ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Redux](https://img.shields.io/badge/redux-%23593d88.svg?style=for-the-badge&logo=redux&logoColor=white) ![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)
+
+**Server:** ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase)
+
+**Host:** ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7)
+
+- build and deployment process is triggered by netlify bots from `main` branch
+
+## Appendix
+
+**Implementation summary:**
+
+- RTKQuery for api access layer, http request and data caching
+- Each component is modularized for optimal testing and development
+
+```bash
+Component "folder level"
+│   Component.test.tsx
+│   Component.tsx
+│   index.tsx
+
+```
+
+- all firebase implementations can be monitored from the Google developer console.

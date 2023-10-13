@@ -1,14 +1,12 @@
 import { withBoomApi } from "../../api";
+import { ICoinResponse } from "./types";
 
 const v3endpoints = withBoomApi.injectEndpoints({
 	endpoints: (build) => ({
-		rate: build.query<any, void>({
-			query: () => ({
-				url: `v3/currency/rate`,
-				method: "GET",
-			}),
+		getCoin: build.query<ICoinResponse, void>({
+			query: () => `v3/currency/rate`,
 		}),
 	}),
 });
 
-export const { useRateQuery } = v3endpoints;
+export const { useGetCoinQuery } = v3endpoints;

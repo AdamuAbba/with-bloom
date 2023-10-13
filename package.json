@@ -3,19 +3,24 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@hookform/resolvers": "^3.3.1",
     "@reduxjs/toolkit": "^1.9.7",
-    "@types/jest": "^27.5.2",
     "@types/node": "^16.18.58",
     "@types/react": "^18.2.25",
     "@types/react-dom": "^18.2.11",
     "firebase": "^10.4.0",
+    "lottie-react": "^2.4.0",
     "mrm": "^4.1.22",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-hook-form": "^7.47.0",
     "react-redux": "^8.1.3",
     "react-scripts": "5.0.1",
     "react-toastify": "^9.1.3",
-    "web-vitals": "^2.1.4"
+    "reactive-button": "^1.3.15",
+    "ts-node": "^10.9.1",
+    "web-vitals": "^2.1.4",
+    "zod": "^3.22.4"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -26,10 +31,22 @@
     "eject": "react-scripts eject",
     "prepare": "husky install",
     "lint": "eslint --fix --ext .ts,.tsx,.js,./src",
-    "format": "prettier --loglevel warn --write \"**/*.{js,css,md,ts,tsx,md,mdx,scss,json}\"",
-    "test:jest": "jest",
+    "format": "prettier --loglevel warn --write \"**/*.{js,css,md,ts,tsx,md}\"",
+    "test:jest": "export TS_JEST_DISABLE_VER_CHECKER=true && jest --runInBand",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "npm run test:jest",
+      "npm run lint",
+      "npm run format"
+    ]
   },
   "browserslist": {
     "production": [
@@ -44,26 +61,33 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@jest/globals": "^29.7.0",
+    "@testing-library/jest-dom": "^6.1.3",
     "@testing-library/react": "^14.0.0",
+    "@types/jest": "^29.5.5",
+    "@types/testing-library__jest-dom": "^6.0.0",
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^8.10.0",
     "eslint-config-react-app": "^7.0.1",
     "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-n": "^15.4.0",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.31.10",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
     "jest": "^27.5.1",
+    "jest-canvas-mock": "^2.5.2",
+    "jest-environment-jsdom": "^27.5.1",
     "lint-staged": "^14.0.1",
     "prettier": "2.8.8",
     "react-router-dom": "^6.16.0",
     "tailwindcss": "^3.3.3",
-    "typescript": "^4.9.5"
+    "ts-jest": "^29.1.1",
+    "typescript": "^4.9.5",
+    "whatwg-fetch": "^3.6.19"
   },
-  "license": "MIT",
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx,json}": "npm run format"
-  }
+  "license": "MIT"
 }

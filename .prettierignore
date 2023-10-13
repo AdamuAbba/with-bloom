@@ -7,3 +7,4 @@ coverage
 .svn
 .hg
 node_modules/
+./src/assets/*
