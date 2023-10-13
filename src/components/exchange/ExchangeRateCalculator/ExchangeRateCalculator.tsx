@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useState } from "react";
 import ReactiveButton from "reactive-button";
-import { useGetCoinQuery } from "../../../services/endpoints/v3";
 import { IButtonState } from "../../../utils/global/types";
 
 const ExchangeRateCalculator = () => {
