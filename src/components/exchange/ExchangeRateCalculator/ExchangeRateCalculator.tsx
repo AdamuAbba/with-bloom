@@ -1,12 +1,7 @@
-import { useState } from "react";
 import ReactiveButton from "reactive-button";
-import { IButtonState } from "../../../utils/global/types";
 
 const ExchangeRateCalculator = () => {
-	const [buttonState, setButtonState] = useState<IButtonState>("idle");
-	// const { data,isLoading } = useGetCoinQuery();
-	// const CoinDataOBJ = Object.keys(data?.data?.rates) as [];
-	// console.log(CoinDataOBJ);
+	const buttonState = "idle";
 
 	return (
 		<div className="bg-white lg:w-96 w-[90%] py-10 rounded-md drop-shadow-xl mt-8 space-y-7 justify-center items-center flex flex-col">
